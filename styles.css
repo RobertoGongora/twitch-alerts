@@ -1,0 +1,91 @@
+/* Demo */
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(#ecf0f1, #fff);
+}
+
+.app-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.app-content .caption {
+  font-family: system-ui, serif;
+  color: #dadada;
+  text-shadow: 0 0 10px #b1b1b1;
+  font-weight: 100;
+  animation: flicker 3s ease-out infinite;
+}
+.app-content .caption .dots {
+  display: inline-block;
+  width: 35px;
+}
+.app-content .caption .dots:before {
+  content: "";
+  display: inline-block;
+  animation: dots 3s linear infinite;
+}
+
+/* Animation */
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes flicker {
+  0% {
+    color: #dadada;
+  }
+  50% {
+    color: #989898;
+  }
+  100% {
+    color: #dadada;
+  }
+}
+@keyframes dots {
+  0% {
+    content: ".";
+  }
+  25% {
+    content: "..";
+  }
+  50% {
+    content: "...";
+  }
+  75% {
+    content: "..";
+  }
+  100% {
+    content: ".";
+  }
+}
+/* Variables */
+/* Loading Icon */
+.loading {
+  width: 100px;
+  height: 100px;
+}
+.loading__ring {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+}
+.loading__ring:first-child {
+  transform: skew(30deg, 20deg);
+}
+.loading__ring:last-child {
+  transform: skew(-30deg, -20deg) scale(-1, 1);
+}
+.loading__ring:last-child svg {
+  animation-delay: -0.5s;
+}
+.loading__ring svg {
+  animation: rotate 1s linear infinite;
+  fill: rgba(0, 0, 0, 0.2);
+}
+
+/*# sourceMappingURL=styles.css.map */
