@@ -4,7 +4,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(#ecf0f1, #fff);
+  background: linear-gradient(#bababa, #e0e0e0);
 }
 
 .app-content {
@@ -14,10 +14,10 @@ body {
 }
 .app-content .caption {
   font-family: system-ui, serif;
-  color: #dadada;
-  text-shadow: 0 0 10px #b1b1b1;
+  text-shadow: 0 0 10px #656565;
   font-weight: 100;
   animation: flicker 3s ease-out infinite;
+  color: #828282;
 }
 .app-content .caption .dots {
   display: inline-block;
@@ -37,13 +37,13 @@ body {
 }
 @keyframes flicker {
   0% {
-    color: #dadada;
+    opacity: 0.2;
   }
   50% {
-    color: #989898;
+    opacity: 1;
   }
   100% {
-    color: #dadada;
+    opacity: 0.2;
   }
 }
 @keyframes dots {
@@ -87,5 +87,3 @@ body {
   animation: rotate 1s linear infinite;
   fill: rgba(0, 0, 0, 0.2);
 }
-
-/*# sourceMappingURL=styles.css.map */
