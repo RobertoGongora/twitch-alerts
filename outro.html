@@ -22,5 +22,36 @@
     </div>
     <h1 class="caption">Finalizando transmisi&oacute;n <span class="dots">&nbsp;</span></h1>
 </main>
+
+<iframe id="existing-iframe-example"
+        width="640" height="360"
+        src="https://www.youtube.com/embed/videoseries?list=PLKb79fFFa48R1BEnWcr3IrRGqkdvCMI3t&autoplay=1&enablejsapi=1"
+        frameborder="0"
+        style="display: none;"
+></iframe>
+
+<script type="text/javascript">
+  var tag = document.createElement('script');
+  tag.id = 'iframe-demo';
+  tag.src = 'https://www.youtube.com/iframe_api';
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+  var player;
+  function onYouTubeIframeAPIReady() {
+    player = new YT.Player('existing-iframe-example', {
+        events: {
+          'onReady': onPlayerReady
+        }
+    });
+  }
+  function onPlayerReady(event) {
+      let num = Math.floor(Math.random() * (9 - 0));
+      setTimeout(() => {
+        event.target.playVideoAt(num);
+        event.target.setVolume(10);
+      }, 100);
+  }
+</script>
 </body>
 </html>
