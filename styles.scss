@@ -12,13 +12,16 @@ body {
   flex-direction: column;
   align-items: center;
 
-  .caption {
+  .caption,
+  .playing {
     font-family: system-ui, serif;
     text-shadow: 0 0 10px #656565;
     font-weight: 100;
-    animation: flicker 3s ease-out infinite;
     color: #828282;
+  }
 
+  .caption {
+    animation: flicker 3s ease-out infinite;
     .dots {
       display: inline-block;
       width: 35px;
@@ -28,6 +31,14 @@ body {
         display: inline-block;
         animation: dots 3s linear infinite;
       }
+    }
+  }
+
+  .playing {
+    font-size: 14px;
+
+    span {
+      font-weight: 700;
     }
   }
 

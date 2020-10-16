@@ -21,6 +21,7 @@
         </div>
     </div>
     <h1 class="caption">Transmisi&oacute;n en pausa <span class="dots">&nbsp;</span></h1>
+    <h3 class="playing">Est&aacute;s escuchando: <span>...</span></h3>
 </main>
 
 <iframe id="existing-iframe-example"
@@ -41,8 +42,9 @@
   function onYouTubeIframeAPIReady() {
     player = new YT.Player('existing-iframe-example', {
         events: {
-          'onReady': onPlayerReady
-        }
+          'onReady': onPlayerReady,
+          'onStateChange': onPlayerStateChange,
+        } 
     });
   }
   function onPlayerReady(event) {
@@ -50,6 +52,11 @@
       setTimeout(() => {
         event.target.playVideoAt(num);
         event.target.setVolume(10);
+      }, 100);
+  }
+  function onPlayerStateChange(event) {
+      setTimeout(() => {
+          document.querySelector('.playing span').innerHTML = event.target.getVideoData()['title'];
       }, 100);
   }
 </script>
